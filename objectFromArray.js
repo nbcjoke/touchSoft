@@ -12,8 +12,9 @@ const videos = [{
     title: "Bad Boys"
 }];
 
-let obj = videos.reduce(function(result, video)  {
+let obj = videos.reduce((result, video) => {
 return {...result, [video.id.toString()]: video.title};
 }, {});
 
 console.log(obj);
+

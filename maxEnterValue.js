@@ -1,10 +1,12 @@
-const arr1 = [1,1,1,3,3,3,3,3,4,5];
+const findMaxFreqentNumber = (numberList) => {
+  const numberMeetingMap = numberList.reduce((result, number) => {
+  result[number] = (result[number] || 0) + 1;
 
-const reps = arr1.reduce((accum, item) => {
-  const newCount = (accum[item] || 0) + 1;
-  return { ...accum, [item]: newCount };
-}, {});
-const maxTimes = Math.max.apply(null, Object.values(reps));
-const [recordItem] = Object.entries(reps).find(([, val]) => val === maxTimes);
+  return result;
+  }, {})
+  return +Object.keys(numberMeetingMap).reduce((result, key) => {
+    return numberMeetingMap[result] > numberMeetingMap[key] ? result : key;
+  })
+}
 
-console.log(recordItem);
+console.log(findMaxFreqentNumber([1,1,2,3,4]))

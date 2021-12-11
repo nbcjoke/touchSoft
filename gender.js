@@ -17,7 +17,7 @@ const users = [
     },
   ];
 
-const user = users.reduce(function(result, user) {
+const user = users.reduce((result, user) => {
   const {first_name, last_name, ...rest} = user;
   const mappedUser = {
     ...rest,

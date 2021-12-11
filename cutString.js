@@ -1,5 +1,6 @@
-function filterStr(str, length) {
-    return `${str.slice(0, length)}...`;
+
+const cutString = (text, value) => {
+    return `${text.slice(0, value)}...`
 }
 
-console.log(filterStr('hello', 3));
+console.log(cutString('Hello', 3))

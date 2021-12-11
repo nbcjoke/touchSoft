@@ -21,11 +21,14 @@ const boxarts = [
     }
   ];
 
-const box = boxarts.reduce((result, boxart) => {
-    if (result.width * result.height < boxart.width * boxart.height) {
-        return boxart;
-    }
-    return result;
-}, boxarts[0]);
+const findMaxSquare = (imageList) => {
+  return imageList.reduce((result, boxart) => {
+  if( result.width * result.height < boxart.width * boxart.height) {
+    return boxart;
+  }
+  return result;
+  }).url;
+}
 
-console.log(box.url);
+console.log(findMaxSquare(boxarts))
+
