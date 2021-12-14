@@ -1,8 +1,8 @@
-const resolveAfterSomeSeconds = ((value, time) => {
+const resolveAfterSomeSeconds = ((value, delay) => {
     return new Promise(resolve => {
         setTimeout(() => {
             resolve(value);
-        }, time)
+        }, delay)
     })
 })
 

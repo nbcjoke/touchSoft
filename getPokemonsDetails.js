@@ -12,7 +12,8 @@ async function getPokemons() {
 
 async function getPokemonsDetails() {
     const result = await getPokemons().then((pokemons) => {
-        return Promise.all(pokemons.map((p) => fetch(p.url).then(r => r.json())))
+        const pokemonsRequests = pokemons.map((p) => fetch(p.url).then(r => r.json()));
+        return Promise.all(pokemonsRequests)
     })
     console.log(result);
 }
